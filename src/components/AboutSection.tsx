@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -22,9 +23,9 @@ const AboutSection = () => {
               payment plan. Our curriculums are designed to take you from novice to
               advanced skills level — no experience is needed to enrol.
             </p>
-            <Button variant="hero" size="lg">
-              Apply Now
-            </Button>
+            <Link to="/apply">
+              <Button variant="hero" size="lg">Apply Now</Button>
+            </Link>
           </div>
 
           {/* Image */}

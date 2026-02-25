@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -18,12 +19,12 @@ const Hero = () => {
               world-class Tech Talents
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="hero" size="lg">
-                Learn More
-              </Button>
-              <Button variant="heroOutline" size="lg">
-                Apply Now
-              </Button>
+              <Link to="/why-vuepoint">
+                <Button variant="hero" size="lg">Learn More</Button>
+              </Link>
+              <Link to="/apply">
+                <Button variant="heroOutline" size="lg">Apply Now</Button>
+              </Link>
             </div>
 
             {/* Badges */}

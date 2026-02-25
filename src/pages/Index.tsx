@@ -3,8 +3,11 @@ import Hero from "@/components/Hero";
 import TechMarquee from "@/components/TechMarquee";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutSection from "@/components/AboutSection";
+import BannerV2 from "@/components/BannerV2";
 import Testimonials from "@/components/Testimonials";
 import Programs from "@/components/Programs";
+import Partners from "@/components/Partners";
+import FAQ from "@/components/FAQ";
 import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
 
@@ -16,8 +19,11 @@ const Index = () => {
       <TechMarquee />
       <WhyChooseUs />
       <AboutSection />
+      <BannerV2 />
       <Testimonials />
       <Programs />
+      <Partners />
+      <FAQ />
       <Stats />
       <Footer />
     </div>

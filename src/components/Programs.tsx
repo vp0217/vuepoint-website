@@ -1,20 +1,24 @@
-import { Code, BarChart3, Brain } from "lucide-react";
+import { Code, Server, Layout } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const programs = [
   {
     icon: Code,
-    title: "Full Stack Developer",
+    title: "Full Stack Development",
+    slug: "full-stack-development",
     description: "Master front-end and back-end technologies to build complete web applications.",
   },
   {
-    icon: BarChart3,
-    title: "Data Analyst",
-    description: "Learn to analyze, visualize and interpret data to drive business decisions.",
+    icon: Server,
+    title: "Backend Development",
+    slug: "backend-development",
+    description: "Learn to build robust server-side applications, APIs, and database systems.",
   },
   {
-    icon: Brain,
-    title: "Data Scientist",
-    description: "Dive into machine learning, AI, and advanced analytics to solve complex problems.",
+    icon: Layout,
+    title: "Frontend Development",
+    slug: "frontend-development",
+    description: "Create beautiful, responsive, and performant user interfaces with modern tools.",
   },
 ];
 
@@ -30,20 +34,19 @@ const Programs = () => {
         </p>
         <div className="grid md:grid-cols-3 gap-8">
           {programs.map((program, i) => (
-            <div
-              key={i}
-              className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border border-border group"
-            >
-              <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                <program.icon className="w-7 h-7 text-primary" />
+            <Link to={`/courses/${program.slug}`} key={i}>
+              <div className="bg-background rounded-2xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 border border-border group h-full">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <program.icon className="w-7 h-7 text-primary" />
+                </div>
+                <h3 className="font-heading font-bold text-xl text-foreground mb-3">
+                  {program.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {program.description}
+                </p>
               </div>
-              <h3 className="font-heading font-bold text-xl text-foreground mb-3">
-                {program.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {program.description}
-              </p>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
