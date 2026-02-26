@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section className="pt-20 md:pt-28 pb-8 md:pb-0 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
+    <section className="pt-20 md:pt-28 pb-8 md:pb-0 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[50vh] sm:min-h-[60vh] lg:min-h-[70vh]">
           {/* Left content */}
-          <div className="space-y-6 animate-fade-up">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
+          <div className="space-y-4 sm:space-y-6 animate-fade-up">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-foreground">
               Developing Highly{" "}
               <span className="text-secondary">Skilled</span>{" "}
               <span className="text-secondary">Tech</span> Talents
@@ -27,38 +27,41 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Badges */}
-            <div className="flex items-center gap-6 pt-4">
-              <div className="bg-muted rounded-lg px-4 py-3 flex items-center gap-3">
-                <span className="font-heading font-bold text-sm text-foreground">
-                  CISCO Partner
-                </span>
+            {/* Metrics */}
+            <div className="flex flex-wrap gap-4 sm:gap-6 pt-4">
+              <div className="bg-muted rounded-lg px-3 py-2.5 sm:px-4 sm:py-3">
+                <p className="text-xl sm:text-2xl font-bold text-primary">50+</p>
+                <p className="font-heading font-bold text-xs text-foreground">Developers trained</p>
               </div>
               <div className="bg-muted rounded-lg px-4 py-3">
-                <span className="font-heading font-bold text-xs text-foreground uppercase leading-tight block">
-                  Accredited by the American Council of Training and Development
-                </span>
+                <p className="text-2xl font-bold text-primary">30+</p>
+                <p className="font-heading font-bold text-xs text-foreground">Projects delivered</p>
+              </div>
+              <div className="bg-muted rounded-lg px-4 py-3">
+                <p className="text-2xl font-bold text-primary">20+</p>
+                <p className="font-heading font-bold text-xs text-foreground">Hiring partners</p>
               </div>
             </div>
           </div>
 
-          {/* Right - Alumni Card + Image */}
-          <div className="relative hidden lg:flex justify-center">
+          {/* Right - Image + teaser card */}
+          <div className="relative hidden md:flex justify-center">
             <div className="relative w-full max-w-md">
               <img
                 src={heroImage}
                 alt="Students learning tech skills at Vuepoint"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              {/* Alumni overlay card */}
-              <div className="absolute -bottom-6 -right-6 bg-background rounded-xl shadow-xl p-5 border border-border">
-                <p className="text-sm text-muted-foreground">Sarah Adebayo</p>
-                <p className="font-heading font-bold text-foreground text-lg">
-                  UI/UX Designer
+              {/* Free event teaser card */}
+              <div className="absolute -bottom-4 right-0 sm:-bottom-6 sm:-right-6 bg-background rounded-xl shadow-xl p-4 sm:p-5 border border-border w-[calc(100%-2rem)] sm:max-w-[220px]">
+                <p className="text-xs font-semibold text-primary uppercase tracking-wider">Free event</p>
+                <p className="font-heading font-bold text-foreground text-base sm:text-lg mt-1">
+                  2 Weeks — HTML & CSS
                 </p>
-                <span className="inline-block mt-1 text-xs font-semibold text-secondary border border-secondary rounded-full px-3 py-0.5">
-                  Alumni
-                </span>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Build your first website</p>
+                <Link to="/events" className="inline-block mt-2 sm:mt-3 text-sm font-semibold text-primary hover:underline">
+                  Join free →
+                </Link>
               </div>
             </div>
           </div>

@@ -1,22 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
     <footer className="bg-foreground">
-      {/* CTA Banner */}
-      <div className="section-padding">
-        <div className="container mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-background">
-            Want to find out more?
-          </h2>
-          <p className="text-background/70 text-lg">We are here for you</p>
-          <Link to="/apply">
-            <Button variant="hero" size="lg">Apply Now</Button>
-          </Link>
-        </div>
-      </div>
-
       {/* Links */}
       <div className="border-t border-background/10">
         <div className="container mx-auto px-4 py-12">
@@ -24,10 +12,7 @@ const Footer = () => {
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-md bg-primary flex items-center justify-center">
-                  <span className="text-primary-foreground font-heading font-bold text-sm">V</span>
-                </div>
-                <span className="font-heading font-bold text-sm text-background">VUEPOINT</span>
+                <img src={logo} alt="Vuepoint" className="h-7 w-auto" />
               </div>
               <p className="text-sm text-background/60 leading-relaxed">
                 Developing highly skilled tech talents for the global market.
@@ -38,9 +23,9 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-bold text-background mb-4">Courses</h4>
               <div className="space-y-2">
-                <Link to="/courses/full-stack-development" className="block text-sm text-background/60 hover:text-background transition-colors">Full Stack Development</Link>
-                <Link to="/courses/backend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Backend Development</Link>
-                <Link to="/courses/frontend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Frontend Development</Link>
+                <Link to="/courses/full-stack-development" className="block text-sm text-background/60 hover:text-background transition-colors">Full Stack Engineering</Link>
+                <Link to="/courses/backend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Backend Engineering</Link>
+                <Link to="/courses/frontend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Frontend Engineering</Link>
               </div>
             </div>
 
@@ -49,6 +34,9 @@ const Footer = () => {
               <h4 className="font-heading font-bold text-background mb-4">Company</h4>
               <div className="space-y-2">
                 <Link to="/why-vuepoint" className="block text-sm text-background/60 hover:text-background transition-colors">Why Vuepoint</Link>
+                <Link to="/faq" className="block text-sm text-background/60 hover:text-background transition-colors">FAQ</Link>
+                <Link to="/events" className="block text-sm text-background/60 hover:text-background transition-colors">Events</Link>
+                <Link to="/hire-us" className="block text-sm text-background/60 hover:text-background transition-colors">Hire Us</Link>
                 <Link to="/apply" className="block text-sm text-background/60 hover:text-background transition-colors">Apply Now</Link>
                 <Link to="/login" className="block text-sm text-background/60 hover:text-background transition-colors">Student Login</Link>
               </div>
@@ -59,7 +47,8 @@ const Footer = () => {
               <h4 className="font-heading font-bold text-background mb-4">Contact</h4>
               <div className="space-y-2 text-sm text-background/60">
                 <p>enquiry@vuepoint.co</p>
-                <p>+234 800 000 0000</p>
+                <p>0816 801 3655</p>
+                <p className="max-w-[200px] sm:max-w-none">Zenith & Castle Plaza, Navy Estate, Karshi</p>
               </div>
             </div>
           </div>

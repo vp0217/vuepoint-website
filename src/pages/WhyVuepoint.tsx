@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Cog, Users, Target, Award, TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/about-image.jpg";
 
 const values = [
   {
@@ -47,9 +47,9 @@ const WhyVuepoint = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 md:pt-36 pb-16 text-center bg-background">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-6">
+      <section className="pt-24 sm:pt-28 md:pt-36 pb-12 md:pb-16 text-center bg-background">
+        <div className="container mx-auto px-4 sm:px-6 max-w-3xl">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground leading-tight mb-4 md:mb-6">
             Meet The Academy<br />
             <span className="text-secondary">Developing Tech Talents</span>
           </h1>
@@ -74,7 +74,7 @@ const WhyVuepoint = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {values.map((item, i) => (
-              <div key={i} className="text-center p-8 rounded-2xl border border-border bg-background hover:shadow-lg transition-shadow">
+              <div key={i} className="text-center p-6 md:p-8 rounded-2xl border border-border bg-background hover:shadow-lg transition-shadow">
                 <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-secondary/10 flex items-center justify-center">
                   <item.icon className="w-8 h-8 text-secondary" />
                 </div>
@@ -88,13 +88,13 @@ const WhyVuepoint = () => {
 
       {/* About Us */}
       <section className="section-padding bg-background">
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div className="relative overflow-hidden rounded-2xl">
               <img src={heroImage} alt="Training at Vuepoint" className="rounded-2xl shadow-xl w-full object-cover aspect-video" />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground">About Us</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">About Us</h2>
               <p className="text-muted-foreground leading-relaxed">
                 Vuepoint Academy is a skill development and placement company, with focus on filling the technical skill gap in the fast-growing tech industry. We are building skills with global standard, adopting curriculum that takes individuals with zero skill to employable skilled talent.
               </p>
@@ -128,7 +128,7 @@ const WhyVuepoint = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             {reasons.map((item, i) => (
-              <div key={i} className="p-8 rounded-2xl border border-border hover:shadow-lg transition-shadow group">
+              <div key={i} className="p-6 md:p-8 rounded-2xl border border-border hover:shadow-lg transition-shadow group overflow-hidden">
                 <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <item.icon className="w-7 h-7 text-primary" />
                 </div>
@@ -137,19 +137,6 @@ const WhyVuepoint = () => {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-foreground">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-background mb-4">
-            Want to be a trainee at Vuepoint?
-          </h2>
-          <p className="text-background/70 mb-8">Start your tech career journey today</p>
-          <Link to="/apply">
-            <Button variant="hero" size="lg">Apply Now</Button>
-          </Link>
         </div>
       </section>
 

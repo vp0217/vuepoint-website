@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "How long are the programs?",
-    a: "Our Full Stack Development program runs for 6 months, while Backend and Frontend Development programs are 4 months each. All programs are intensive and hands-on.",
+    a: "Our Full Stack Engineering program runs for 6 months, while Backend and Frontend Engineering programs are 4 months each. All programs are intensive and hands-on.",
   },
   {
     q: "What are the payment options?",
@@ -35,15 +35,15 @@ const faqs = [
 const FAQ = () => {
   return (
     <section className="section-padding bg-background">
-      <div className="container mx-auto max-w-3xl">
+      <div className="container mx-auto max-w-3xl px-4">
         <p className="text-sm font-semibold text-primary uppercase tracking-wider text-center mb-3">FAQ</p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-12">
           Frequently Asked Questions
         </h2>
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-xl px-6 data-[state=open]:shadow-md transition-shadow">
-              <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-5">
+            <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded-xl px-4 md:px-6 data-[state=open]:shadow-md transition-shadow">
+              <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline py-4 md:py-5 text-sm sm:text-base">
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground leading-relaxed pb-5">

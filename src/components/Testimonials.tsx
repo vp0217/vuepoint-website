@@ -35,17 +35,17 @@ const Testimonials = () => {
 
   return (
     <section className="section-padding bg-background">
-      <div className="container mx-auto max-w-4xl">
+      <div className="container mx-auto max-w-4xl px-4">
         <p className="text-sm font-semibold text-primary uppercase tracking-wider text-center mb-2">
           Testimonials
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-12">
           Hear from some of our graduates
         </h2>
 
-        <div className="relative bg-muted rounded-2xl p-8 md:p-12">
-          <Quote className="w-10 h-10 text-primary/20 mb-4" />
-          <p className="text-foreground text-lg leading-relaxed mb-8">
+        <div className="relative bg-muted rounded-2xl p-6 md:p-8 lg:p-12">
+          <Quote className="w-8 h-8 md:w-10 md:h-10 text-primary/20 mb-4" />
+          <p className="text-foreground text-base md:text-lg leading-relaxed mb-6 md:mb-8 pr-12 md:pr-14">
             "{t.text}"
           </p>
           <div className="flex items-center gap-4">
@@ -61,7 +61,7 @@ const Testimonials = () => {
           </div>
 
           {/* Nav arrows */}
-          <div className="flex gap-2 absolute top-8 right-8 md:top-12 md:right-12">
+          <div className="flex gap-2 absolute top-4 right-4 sm:top-6 sm:right-6 md:top-12 md:right-12">
             <button
               onClick={prev}
               className="w-10 h-10 rounded-full border border-border flex items-center justify-center hover:bg-background transition-colors"

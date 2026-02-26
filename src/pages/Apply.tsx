@@ -45,7 +45,7 @@ const Apply = () => {
             </div>
 
             {/* Form */}
-            <div className="bg-background rounded-2xl border border-border shadow-xl p-8 md:p-10">
+            <div className="bg-background rounded-2xl border border-border shadow-xl p-6 sm:p-8 md:p-10">
               {submitted ? (
                 <div className="text-center py-12 space-y-4">
                   <div className="w-16 h-16 mx-auto rounded-full bg-secondary/10 flex items-center justify-center">
@@ -74,15 +74,15 @@ const Apply = () => {
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Phone Number</label>
-                      <Input type="tel" placeholder="+234 800 000 0000" required />
+                      <Input type="tel" placeholder="0816 801 3655" required />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Course of Interest</label>
                       <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
                         <option value="">Select a course</option>
-                        <option value="full-stack">Full Stack Development</option>
-                        <option value="backend">Backend Development</option>
-                        <option value="frontend">Frontend Development</option>
+                        <option value="full-stack">Full Stack Engineering</option>
+                        <option value="backend">Backend Engineering</option>
+                        <option value="frontend">Frontend Engineering</option>
                       </select>
                     </div>
                     <div>

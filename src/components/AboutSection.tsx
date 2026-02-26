@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/about-image.jpg";
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
@@ -12,7 +12,7 @@ const AboutSection = () => {
             <p className="text-sm font-semibold text-primary uppercase tracking-wider">
               Vuepoint Academy
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">
               Get Skilled. Get Hired.
             </h2>
             <p className="text-muted-foreground leading-relaxed">

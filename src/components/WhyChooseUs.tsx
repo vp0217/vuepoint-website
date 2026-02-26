@@ -25,11 +25,11 @@ const WhyChooseUs = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-14">
           Why Choose Us
         </h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {features.map((feature, i) => (
             <div
               key={i}
-              className="text-center p-8 rounded-2xl border border-border hover:shadow-lg transition-shadow duration-300 group"
+              className="text-center p-6 md:p-8 rounded-2xl border border-border hover:shadow-lg transition-shadow duration-300 group"
             >
               <div className="w-16 h-16 mx-auto mb-6 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
                 <feature.icon className="w-8 h-8 text-secondary" />

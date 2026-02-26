@@ -12,8 +12,8 @@ const Login = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <section className="pt-28 md:pt-36 pb-20 flex items-center justify-center">
-        <div className="w-full max-w-md px-4">
+      <section className="pt-24 sm:pt-28 md:pt-36 pb-16 md:pb-20 flex items-center justify-center px-4">
+        <div className="w-full max-w-md">
           <div className="bg-background rounded-2xl border border-border shadow-xl p-8 md:p-10">
             {/* Logo */}
             <div className="text-center mb-8">
