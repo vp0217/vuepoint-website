@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Sparkles, Code, ArrowRight } from "lucide-react";
 
 const TwoWeeksFreePromo = () => {
@@ -31,7 +31,7 @@ const TwoWeeksFreePromo = () => {
               </div>
             </div>
             <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
-              <Link to="/events">
+              <Link href="/events">
                 <Button variant="hero" size="lg" className="gap-2 w-full sm:w-auto">
                   Join free event <ArrowRight className="w-4 h-4" />
                 </Button>

@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Cog, Users, Target, Award, TrendingUp } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import heroImage from "@/assets/about-image.jpg";
+import ReadyToStartSection from "@/components/ReadyToStartSection";
 
 const values = [
   {
@@ -60,7 +61,7 @@ const WhyVuepoint = () => {
             By providing industry focused programs for career transformation and growth,
             introducing Empirical Process Control in Training.
           </p>
-          <Link to="/apply">
+          <Link href="/apply">
             <Button variant="hero" size="lg">Apply Now</Button>
           </Link>
         </div>
@@ -91,7 +92,7 @@ const WhyVuepoint = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="relative overflow-hidden rounded-2xl">
-              <img src={heroImage} alt="Training at Vuepoint" className="rounded-2xl shadow-xl w-full object-cover aspect-video" />
+              <img src={typeof heroImage === "string" ? heroImage : heroImage.src} alt="Training at Vuepoint" className="rounded-2xl shadow-xl w-full object-cover aspect-video" />
             </div>
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground">About Us</h2>
@@ -140,6 +141,7 @@ const WhyVuepoint = () => {
         </div>
       </section>
 
+      <ReadyToStartSection />
       <Footer />
     </div>
   );

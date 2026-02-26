@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import testimonial1 from "@/assets/testimonial-1.jpg";
@@ -50,7 +51,7 @@ const Testimonials = () => {
           </p>
           <div className="flex items-center gap-4">
             <img
-              src={t.image}
+              src={typeof t.image === "string" ? t.image : t.image.src}
               alt={t.name}
               className="w-14 h-14 rounded-full object-cover"
             />

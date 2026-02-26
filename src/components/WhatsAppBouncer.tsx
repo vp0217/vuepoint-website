@@ -1,3 +1,4 @@
+"use client";
 const WHATSAPP_NUMBER = "2348168013655";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 

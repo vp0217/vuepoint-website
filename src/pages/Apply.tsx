@@ -1,3 +1,4 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,40 @@ import { CheckCircle } from "lucide-react";
 
 const Apply = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setLoading(true);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const body = {
+      firstName: formData.get("firstName"),
+      lastName: formData.get("lastName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      course: formData.get("course"),
+      experienceLevel: formData.get("experienceLevel"),
+      message: formData.get("message") || undefined,
+    };
+    try {
+      const res = await fetch("/api/applications", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || "Failed to submit");
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to submit. Try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -57,28 +88,29 @@ const Apply = () => {
               ) : (
                 <>
                   <h2 className="font-heading font-bold text-2xl text-foreground mb-6">Apply Now</h2>
+                  {error && <p className="text-sm text-destructive mb-4">{error}</p>}
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="text-sm font-medium text-foreground mb-1.5 block">First Name</label>
-                        <Input placeholder="John" required />
+                        <Input name="firstName" placeholder="John" required />
                       </div>
                       <div>
                         <label className="text-sm font-medium text-foreground mb-1.5 block">Last Name</label>
-                        <Input placeholder="Doe" required />
+                        <Input name="lastName" placeholder="Doe" required />
                       </div>
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Email Address</label>
-                      <Input type="email" placeholder="john@example.com" required />
+                      <Input name="email" type="email" placeholder="john@example.com" required />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Phone Number</label>
-                      <Input type="tel" placeholder="0816 801 3655" required />
+                      <Input name="phone" type="tel" placeholder="0816 801 3655" required />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Course of Interest</label>
-                      <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
+                      <select name="course" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
                         <option value="">Select a course</option>
                         <option value="full-stack">Full Stack Engineering</option>
                         <option value="backend">Backend Engineering</option>
@@ -87,7 +119,7 @@ const Apply = () => {
                     </div>
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Experience Level</label>
-                      <select className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
+                      <select name="experienceLevel" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
                         <option value="">Select your level</option>
                         <option value="none">No experience</option>
                         <option value="beginner">Beginner</option>
@@ -97,12 +129,13 @@ const Apply = () => {
                     <div>
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Why do you want to join? (Optional)</label>
                       <textarea
+                        name="message"
                         className="flex min-h-[100px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                         placeholder="Tell us about your goals..."
                       />
                     </div>
-                    <Button variant="hero" size="lg" className="w-full" type="submit">
-                      Submit Application
+                    <Button variant="hero" size="lg" className="w-full" type="submit" disabled={loading}>
+                      {loading ? "Submitting..." : "Submit Application"}
                     </Button>
                   </form>
                 </>

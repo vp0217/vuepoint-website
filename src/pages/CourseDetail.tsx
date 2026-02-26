@@ -1,4 +1,7 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+"use client";
+import { useEffect } from "react";
+import { useParams, useRouter } from "next/navigation";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -17,10 +20,16 @@ function discountedPrice(original: number) {
 }
 
 const CourseDetail = () => {
-  const { slug } = useParams();
+  const params = useParams();
+  const router = useRouter();
+  const slug = params?.slug as string | undefined;
   const course = courses.find((c) => c.slug === slug);
 
-  if (!course) return <Navigate to="/courses" replace />;
+  useEffect(() => {
+    if (slug && !course) router.replace("/courses");
+  }, [slug, course, router]);
+
+  if (!course) return null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -29,7 +38,7 @@ const CourseDetail = () => {
       {/* Hero */}
       <section className="pt-24 sm:pt-28 md:pt-36 pb-12 md:pb-16 bg-foreground">
         <div className="container mx-auto px-4 sm:px-6">
-          <Link to="/courses" className="inline-flex items-center gap-2 text-background/60 hover:text-background transition-colors mb-8">
+          <Link href="/courses" className="inline-flex items-center gap-2 text-background/60 hover:text-background transition-colors mb-8">
             <ArrowLeft className="w-4 h-4" /> Back to Courses
           </Link>
           <div className="max-w-3xl">
@@ -69,7 +78,7 @@ const CourseDetail = () => {
                 </span>
               ))}
             </div>
-            <Link to="/apply">
+            <Link href="/apply">
               <Button variant="hero" size="lg">Apply Now</Button>
             </Link>
           </div>
@@ -110,7 +119,7 @@ const CourseDetail = () => {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 mb-8">
-                <Link to="/apply">
+                <Link href="/apply">
                   <Button variant="hero" size="lg">Apply Now</Button>
                 </Link>
                 <a
@@ -245,7 +254,7 @@ const CourseDetail = () => {
           <p className="text-background/70 mb-6 md:mb-8 max-w-xl mx-auto text-sm sm:text-base">
             Join hundreds of graduates who have transformed their careers through our {course.title} program.
           </p>
-          <Link to="/apply">
+          <Link href="/apply">
             <Button variant="hero" size="lg">Apply Now</Button>
           </Link>
         </div>

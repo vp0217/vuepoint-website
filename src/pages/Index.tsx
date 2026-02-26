@@ -11,6 +11,7 @@ import Partners from "@/components/Partners";
 import FAQ from "@/components/FAQ";
 import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
+import ReadyToStartSection from "@/components/ReadyToStartSection";
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
       <Partners />
       <FAQ />
       <Stats />
+      <ReadyToStartSection />
       <Footer />
     </div>
   );

@@ -1,7 +1,8 @@
+"use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
@@ -11,33 +12,33 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4 sm:px-6 max-w-[100vw]">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img src={logo} alt="Vuepoint" className="h-8 w-auto" />
+        <Link href="/" className="flex items-center">
+          <img src={typeof logo === "string" ? logo : logo.src} alt="Vuepoint" className="h-8 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
-          <Link to="/why-vuepoint" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/why-vuepoint" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Why Vuepoint
           </Link>
-          <Link to="/courses" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/courses" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Courses
           </Link>
-          <Link to="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/faq" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             FAQ
           </Link>
-          <Link to="/hire-us" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/hire-us" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Hire Us
           </Link>
-          <Link to="/events" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <Link href="/events" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
             Events
           </Link>
         </div>
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-3">
-          <Link to="/apply"><Button variant="heroOutline" size="sm">Apply Now</Button></Link>
-          <Link to="/login"><Button variant="nav" size="sm">Login</Button></Link>
+          <Link href="/apply"><Button variant="heroOutline" size="sm">Apply Now</Button></Link>
+          <Link href="/login"><Button variant="nav" size="sm">Login</Button></Link>
         </div>
 
         {/* Mobile toggle */}
@@ -52,14 +53,14 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden bg-background border-t border-border px-4 py-6 space-y-4">
-          <Link to="/why-vuepoint" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Why Vuepoint</Link>
-          <Link to="/courses" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Courses</Link>
-          <Link to="/faq" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>FAQ</Link>
-          <Link to="/hire-us" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Hire Us</Link>
-          <Link to="/events" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Events</Link>
+          <Link href="/why-vuepoint" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Why Vuepoint</Link>
+          <Link href="/courses" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Courses</Link>
+          <Link href="/faq" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>FAQ</Link>
+          <Link href="/hire-us" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Hire Us</Link>
+          <Link href="/events" className="block text-sm font-medium text-foreground" onClick={() => setIsOpen(false)}>Events</Link>
           <div className="flex gap-3 pt-2">
-            <Link to="/apply" onClick={() => setIsOpen(false)}><Button variant="heroOutline" size="sm">Apply Now</Button></Link>
-            <Link to="/login" onClick={() => setIsOpen(false)}><Button variant="nav" size="sm">Login</Button></Link>
+            <Link href="/apply" onClick={() => setIsOpen(false)}><Button variant="heroOutline" size="sm">Apply Now</Button></Link>
+            <Link href="/login" onClick={() => setIsOpen(false)}><Button variant="nav" size="sm">Login</Button></Link>
           </div>
         </div>
       )}

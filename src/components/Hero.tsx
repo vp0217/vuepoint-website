@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -19,10 +19,10 @@ const Hero = () => {
               world-class Tech Talents
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/why-vuepoint">
+              <Link href="/why-vuepoint">
                 <Button variant="hero" size="lg">Learn More</Button>
               </Link>
-              <Link to="/apply">
+              <Link href="/apply">
                 <Button variant="heroOutline" size="lg">Apply Now</Button>
               </Link>
             </div>
@@ -48,7 +48,7 @@ const Hero = () => {
           <div className="relative hidden md:flex justify-center">
             <div className="relative w-full max-w-md">
               <img
-                src={heroImage}
+                src={typeof heroImage === "string" ? heroImage : heroImage.src}
                 alt="Students learning tech skills at Vuepoint"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
@@ -59,7 +59,7 @@ const Hero = () => {
                   2 Weeks — HTML & CSS
                 </p>
                 <p className="text-xs sm:text-sm text-muted-foreground mt-1">Build your first website</p>
-                <Link to="/events" className="inline-block mt-2 sm:mt-3 text-sm font-semibold text-primary hover:underline">
+                <Link href="/events" className="inline-block mt-2 sm:mt-3 text-sm font-semibold text-primary hover:underline">
                   Join free →
                 </Link>
               </div>

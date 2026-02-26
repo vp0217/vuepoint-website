@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <img src={logo} alt="Vuepoint" className="h-7 w-auto" />
+                <img src={typeof logo === "string" ? logo : logo.src} alt="Vuepoint" className="h-7 w-auto" />
               </div>
               <p className="text-sm text-background/60 leading-relaxed">
                 Developing highly skilled tech talents for the global market.
@@ -23,9 +23,9 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-bold text-background mb-4">Courses</h4>
               <div className="space-y-2">
-                <Link to="/courses/full-stack-development" className="block text-sm text-background/60 hover:text-background transition-colors">Full Stack Engineering</Link>
-                <Link to="/courses/backend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Backend Engineering</Link>
-                <Link to="/courses/frontend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Frontend Engineering</Link>
+                <Link href="/courses/full-stack-development" className="block text-sm text-background/60 hover:text-background transition-colors">Full Stack Engineering</Link>
+                <Link href="/courses/backend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Backend Engineering</Link>
+                <Link href="/courses/frontend-development" className="block text-sm text-background/60 hover:text-background transition-colors">Frontend Engineering</Link>
               </div>
             </div>
 
@@ -33,12 +33,12 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-bold text-background mb-4">Company</h4>
               <div className="space-y-2">
-                <Link to="/why-vuepoint" className="block text-sm text-background/60 hover:text-background transition-colors">Why Vuepoint</Link>
-                <Link to="/faq" className="block text-sm text-background/60 hover:text-background transition-colors">FAQ</Link>
-                <Link to="/events" className="block text-sm text-background/60 hover:text-background transition-colors">Events</Link>
-                <Link to="/hire-us" className="block text-sm text-background/60 hover:text-background transition-colors">Hire Us</Link>
-                <Link to="/apply" className="block text-sm text-background/60 hover:text-background transition-colors">Apply Now</Link>
-                <Link to="/login" className="block text-sm text-background/60 hover:text-background transition-colors">Student Login</Link>
+                <Link href="/why-vuepoint" className="block text-sm text-background/60 hover:text-background transition-colors">Why Vuepoint</Link>
+                <Link href="/faq" className="block text-sm text-background/60 hover:text-background transition-colors">FAQ</Link>
+                <Link href="/events" className="block text-sm text-background/60 hover:text-background transition-colors">Events</Link>
+                <Link href="/hire-us" className="block text-sm text-background/60 hover:text-background transition-colors">Hire Us</Link>
+                <Link href="/apply" className="block text-sm text-background/60 hover:text-background transition-colors">Apply Now</Link>
+                <Link href="/login" className="block text-sm text-background/60 hover:text-background transition-colors">Student Login</Link>
               </div>
             </div>
 

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FAQ from "@/components/FAQ";
+import ReadyToStartSection from "@/components/ReadyToStartSection";
 
 const Faq = () => {
   return (
@@ -9,6 +10,7 @@ const Faq = () => {
       <main className="pt-24 sm:pt-28 md:pt-36">
         <FAQ />
       </main>
+      <ReadyToStartSection />
       <Footer />
     </div>
   );

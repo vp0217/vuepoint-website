@@ -2,7 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Code, Server, Layout, Clock, Users, BookOpen, CheckCircle, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import ReadyToStartSection from "@/components/ReadyToStartSection";
 
 const courses = [
   {
@@ -182,7 +183,7 @@ const Courses = () => {
 
                 {/* CTA */}
                 <div className="px-6 md:px-8 pb-6 md:pb-8 mt-auto">
-                  <Link to={`/courses/${course.slug}`}>
+                  <Link href={`/courses/${course.slug}`}>
                     <Button variant="hero" className="w-full group/btn">
                       View Details <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </Button>
@@ -216,6 +217,7 @@ const Courses = () => {
         </div>
       </section>
 
+      <ReadyToStartSection />
       <Footer />
     </div>
   );

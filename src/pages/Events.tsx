@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Calendar, Clock, MapPin, Code, CheckCircle, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const WHATSAPP_URL = "https://wa.me/2348168013655";
 
@@ -48,7 +48,7 @@ const EventFree = () => {
                   <MessageCircle className="w-5 h-5" /> Register for free
                 </Button>
               </a>
-              <Link to="/courses">
+              <Link href="/courses">
                 <Button variant="heroOutline" size="lg" className="border-background/30 text-background hover:bg-background/10">
                   See full courses
                 </Button>

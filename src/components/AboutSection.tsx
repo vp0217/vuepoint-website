@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/about-image.jpg";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const AboutSection = () => {
   return (
@@ -23,7 +23,7 @@ const AboutSection = () => {
               payment plan. Our curriculums are designed to take you from novice to
               advanced skills level — no experience is needed to enrol.
             </p>
-            <Link to="/apply">
+            <Link href="/apply">
               <Button variant="hero" size="lg">Apply Now</Button>
             </Link>
           </div>
@@ -31,7 +31,7 @@ const AboutSection = () => {
           {/* Image */}
           <div className="relative">
             <img
-              src={heroImage}
+              src={typeof heroImage === "string" ? heroImage : heroImage.src}
               alt="Students learning at Vuepoint"
               className="rounded-2xl shadow-xl w-full object-cover aspect-video"
             />

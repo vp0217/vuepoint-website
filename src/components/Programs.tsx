@@ -1,5 +1,5 @@
 import { Code, Server, Layout, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const programs = [
@@ -45,7 +45,7 @@ const Programs = () => {
               <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                 {program.description}
               </p>
-              <Link to={`/courses/${program.slug}`} className="mt-6">
+              <Link href={`/courses/${program.slug}`} className="mt-6">
                 <Button variant="outline" size="sm" className="gap-2">
                   View details <ArrowRight className="w-3.5 h-3.5" />
                 </Button>

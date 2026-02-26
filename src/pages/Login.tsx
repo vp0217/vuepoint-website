@@ -1,9 +1,11 @@
+"use client";
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Eye, EyeOff } from "lucide-react";
-import { useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,9 +19,7 @@ const Login = () => {
           <div className="bg-background rounded-2xl border border-border shadow-xl p-8 md:p-10">
             {/* Logo */}
             <div className="text-center mb-8">
-              <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mx-auto mb-4">
-                <span className="text-primary-foreground font-heading font-bold text-xl">V</span>
-              </div>
+              <img src={typeof logo === "string" ? logo : logo.src} alt="Vuepoint" className="h-12 w-auto mx-auto mb-4" />
               <h1 className="font-heading font-bold text-2xl text-foreground">Welcome Back</h1>
               <p className="text-sm text-muted-foreground mt-1">Log in to your Vuepoint account</p>
             </div>
@@ -56,7 +56,7 @@ const Login = () => {
 
             <p className="text-center text-sm text-muted-foreground mt-6">
               Don't have an account?{" "}
-              <Link to="/apply" className="text-primary font-semibold hover:underline">Apply Now</Link>
+              <Link href="/apply" className="text-primary font-semibold hover:underline">Apply Now</Link>
             </p>
           </div>
         </div>

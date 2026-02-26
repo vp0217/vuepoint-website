@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ArrowRight, Sparkles, Zap, Rocket } from "lucide-react";
 
 const BannerV2 = () => {
@@ -54,12 +54,12 @@ const BannerV2 = () => {
               </p>
 
               <div className="flex flex-wrap gap-4">
-                <Link to="/apply">
+                <Link href="/apply">
                   <Button className="bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-full font-semibold shadow-lg shadow-secondary/25 h-12 px-8 text-base">
                     Enroll Now <ArrowRight className="w-5 h-5 ml-1" />
                   </Button>
                 </Link>
-                <Link to="/courses">
+                <Link href="/courses">
                   <Button className="bg-transparent hover:bg-background/10 text-background border-2 border-background/30 rounded-full font-semibold h-12 px-8 text-base">
                     Explore Courses
                   </Button>
