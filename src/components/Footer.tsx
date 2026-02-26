@@ -46,7 +46,7 @@ const Footer = () => {
             <div>
               <h4 className="font-heading font-bold text-background mb-4">Contact</h4>
               <div className="space-y-2 text-sm text-background/60">
-                <p>enquiry@vuepoint.co</p>
+                <p>learning@vuepointdigitalhub.com</p>
                 <p>0816 801 3655</p>
                 <p className="max-w-[200px] sm:max-w-none">Zenith & Castle Plaza, Navy Estate, Karshi</p>
               </div>

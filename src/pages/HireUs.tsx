@@ -186,7 +186,7 @@ const HireUs = () => {
                 <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
               </p>
               <p className="flex items-center justify-center gap-2">
-                <Mail className="w-4 h-4" /> enquiry@vuepoint.co
+                <Mail className="w-4 h-4" /> learning@vuepointdigitalhub.com
               </p>
               <p className="flex items-center justify-center gap-2">
                 <MapPin className="w-4 h-4 shrink-0" /> {ADDRESS}
