@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { COURSE_OPTIONS } from "@/lib/courses";
 
 const Apply = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -112,9 +113,11 @@ const Apply = () => {
                       <label className="text-sm font-medium text-foreground mb-1.5 block">Course of Interest</label>
                       <select name="course" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" required>
                         <option value="">Select a course</option>
-                        <option value="full-stack">Full Stack Engineering</option>
-                        <option value="backend">Backend Engineering</option>
-                        <option value="frontend">Frontend Engineering</option>
+                        {COURSE_OPTIONS.map((course) => (
+                          <option key={course.value} value={course.value}>
+                            {course.label}
+                          </option>
+                        ))}
                       </select>
                     </div>
                     <div>
