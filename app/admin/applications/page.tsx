@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import type { Application, ApplicationStatus } from "@/lib/applications";
+import { getCourseLabel } from "@/lib/courses";
 
 const STATUS_OPTIONS: { value: ApplicationStatus; label: string }[] = [
   { value: "new", label: "New" },
@@ -116,7 +117,7 @@ export default function AdminApplicationsPage() {
                       <td className="p-3 font-medium">{app.firstName} {app.lastName}</td>
                       <td className="p-3">{app.email}</td>
                       <td className="p-3">{app.phone}</td>
-                      <td className="p-3">{app.course}</td>
+                      <td className="p-3">{getCourseLabel(app.course)}</td>
                       <td className="p-3">{app.experienceLevel}</td>
                       <td className="p-3">
                         <select

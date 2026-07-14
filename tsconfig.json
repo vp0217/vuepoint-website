@@ -40,9 +40,6 @@
   ],
   "exclude": [
     "node_modules",
-    ".next",
-    "src/App.tsx",
-    "src/main.tsx",
-    "src/components/NavLink.tsx"
+    ".next"
   ]
 }

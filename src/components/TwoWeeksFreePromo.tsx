@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Sparkles, Code, ArrowRight } from "lucide-react";
+import BootcampCountdown from "@/components/BootcampCountdown";
+import { HOLIDAY_BOOTCAMP_START_LABEL } from "@/lib/holiday-bootcamp";
 
 const TwoWeeksFreePromo = () => {
   return (
@@ -20,20 +22,21 @@ const TwoWeeksFreePromo = () => {
               </div>
               <div>
                 <div className="inline-flex items-center gap-1.5 text-primary font-bold text-sm uppercase tracking-wider mb-1">
-                  <Sparkles className="w-4 h-4" /> Free event
+                  <Sparkles className="w-4 h-4" /> Holiday bootcamp
                 </div>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-background leading-tight">
-                  2 Weeks Free — Learn HTML & CSS
+                  Become a Certified Frontend Engineer in 1 Month
                 </h2>
                 <p className="text-background/80 mt-1 text-sm md:text-base">
-                  Build your first website from scratch. No experience needed. Limited spots.
+                  Master HTML, CSS, JavaScript & React.js. Starts {HOLIDAY_BOOTCAMP_START_LABEL}. Special holiday price — ₦68,500.
                 </p>
               </div>
             </div>
-            <div className="flex-shrink-0 flex flex-col sm:flex-row gap-3">
+            <div className="flex-shrink-0 flex flex-col gap-4 sm:items-end">
+              <BootcampCountdown variant="compact" />
               <Link href="/events">
                 <Button variant="hero" size="lg" className="gap-2 w-full sm:w-auto">
-                  Join free event <ArrowRight className="w-4 h-4" />
+                  Enroll now <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
             </div>

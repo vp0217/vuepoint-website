@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-image.jpg";
 import Link from "next/link";
+import { HOLIDAY_BOOTCAMP_START_LABEL } from "@/lib/holiday-bootcamp";
 
 const Hero = () => {
   return (
@@ -52,15 +53,15 @@ const Hero = () => {
                 alt="Students learning tech skills at Vuepoint"
                 className="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
-              {/* Free event teaser card */}
+              {/* Holiday bootcamp teaser card */}
               <div className="absolute -bottom-4 right-0 sm:-bottom-6 sm:-right-6 bg-background rounded-xl shadow-xl p-4 sm:p-5 border border-border w-[calc(100%-2rem)] sm:max-w-[220px]">
-                <p className="text-xs font-semibold text-primary uppercase tracking-wider">Free event</p>
+                <p className="text-xs font-semibold text-primary uppercase tracking-wider">Holiday bootcamp</p>
                 <p className="font-heading font-bold text-foreground text-base sm:text-lg mt-1">
-                  2 Weeks — HTML & CSS
+                  Certified Frontend Engineer
                 </p>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Build your first website</p>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">Starts {HOLIDAY_BOOTCAMP_START_LABEL} · ₦68,500</p>
                 <Link href="/events" className="inline-block mt-2 sm:mt-3 text-sm font-semibold text-primary hover:underline">
-                  Join free →
+                  Enroll now →
                 </Link>
               </div>
             </div>
